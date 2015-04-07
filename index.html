@@ -42,9 +42,40 @@
 
 <p>Please note that there are many open market tools that produce the same results; however, the IRS does not endorse any commercial products, including the frameworks used in the example. </p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<h3>
+<a id="windows-batch-scripting" class="anchor" href="#windows-batch-scripting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Windows Batch Scripting</h3>
+
+<p>The following code should be placed into a batch file and run in the same folder as the openssl executable. </p>
+
+<p>The following files are required and the filename in the batch script will need to be replaced with your filename for each:
+KEYFILE - this is the Key file that will be in the downloaded notification .zip file
+PRIVATEKEY - this will be your private key that corresponds to the certificate that was uploaded into IDES
+PAYLOAD - this is the Payload file that will be in the downloaded notification .zip file</p>
+
+<pre><code>
+openssl rsautl -decrypt -hexdump -in KEYFILE -inkey PRIVATEKEY -out aeskey.txt
+
+set /p firstline=&lt; aeskey.txt  
+Set line1=%firstline%     
+set result1=%line1:~7,48%                           
+
+Setlocal EnableDelayedExpansion
+for /f "tokens=* delims= " %%i in (aeskey.txt) do (
+set var=%%i
+)
+set result2=!var:~7,48!  
+
+set result1=%result1: =%
+set result1=%result1:-=%
+set result1=%result1:~0,32%
+set result2=%result2: =%
+set result2=%result2:-=%
+set result2=%result2:~0,32%
+set combined=%result1%%result2%
+
+openssl aes-256-ecb -d -in PAYLOAD -out PAYLOAD.zip -K %combined%
+
+
 </code></pre>
 
 <p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
