@@ -1,37 +1,25 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="IDES Data Preparation - OpenSSL : Decrypting notifications received from IDES with OpenSSL">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>IDES Data Preparation - OpenSSL</title>
+    <meta charset="UTF-8">
+    <title>IDES Data Preparation - OpenSSL by IRSgov</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">IDES Data Preparation - OpenSSL</h1>
+      <h2 class="project-tagline">Decrypting notifications received from IDES with OpenSSL</h2>
+      <a href="https://github.com/IRSgov/IDES-Data-Preparation-OpenSSL" class="btn">View on GitHub</a>
+      <a href="https://github.com/IRSgov/IDES-Data-Preparation-OpenSSL/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/IRSgov/IDES-Data-Preparation-OpenSSL/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/IRSgov/IDES-Data-Preparation-OpenSSL">View on GitHub</a>
-
-          <h1 id="project_title">IDES Data Preparation - OpenSSL</h1>
-          <h2 id="project_tagline">Decrypting notifications received from IDES with OpenSSL</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/IRSgov/IDES-Data-Preparation-OpenSSL/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/IRSgov/IDES-Data-Preparation-OpenSSL/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h2>
+    <section class="main-content">
+      <h2>
 <a id="ides-data-preparation" class="anchor" href="#ides-data-preparation" aria-hidden="true"><span class="octicon octicon-link"></span></a>IDES Data Preparation</h2>
 
 <p>The International Data Exchange Service (IDES) is a secure managed file transfer service that allows financial institutions and tax authorities to securely send information on financial accounts held by U.S. taxpayers in accordance with the Foreign Account Tax Compliance Act (FATCA). Files transmitted via IDES must be encrypted and packaged in accordance with published data preparation instructions. The data preparation process is an important step to ensure that information transmitted via IDES conforms to U.S security standards to safeguard sensitive information.</p>
@@ -110,41 +98,40 @@ Figure 3</p>
 <img src="http://irsgov.github.io/IDES-Data-Preparation-OpenSSL/images/image3.png" alt="Image 4">
 Figure 4</p>
 
-<p>The hex content that is needed from the file is bolded below. The rest of the information needs to be removed. 
-0000 - <strong>e0 a8 fc 55 88 72 3d 5f-24 0f e4 7f 39 42 df a9</strong>   ...U.r=_$...9B..</p>
+<p>The hex content that is needed from the file is bolded below. The rest of the information needs to be removed. </p>
+
+<p>0000 - <strong>e0 a8 fc 55 88 72 3d 5f-24 0f e4 7f 39 42 df a9</strong>   ...U.r=_$...9B..</p>
 
 <p>0010 - <strong>c4 34 ab 26 bb b2 dc 20-65 59 d7 14 cd b0 15 47</strong>   .4.&amp;... eY.....G</p>
 
-<ol>
-<li> With the beginning and ending information stripped out.</li>
-</ol>
+<ul>
+<li>With the beginning and ending information stripped out.</li>
+</ul>
 
 <p><strong>e0 a8 fc 55 88 72 3d 5f-24 0f e4 7f 39 42 df a9</strong></p>
 
 <p><strong>c4 34 ab 26 bb b2 dc 20-65 59 d7 14 cd b0 15 47</strong></p>
 
-<ol>
-<li> With the spaces and dashes removed and leftover characters together, the end result is a 64 character string. The string must be exactly 64 characters in length:
-<strong>e0a8fc5588723d5f240fe47f3942dfa9c434ab26bbb2dc206559d714cdb01547</strong>
-</li>
-</ol>
+<ul>
+<li>With the spaces and dashes removed and leftover characters together, the end result is a 64 character string. The string must be exactly 64 characters in length:</li>
+</ul>
+
+<p><strong>e0a8fc5588723d5f240fe47f3942dfa9c434ab26bbb2dc206559d714cdb01547</strong></p>
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
 <p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">IDES Data Preparation - OpenSSL maintained by <a href="https://github.com/IRSgov">IRSgov</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/IRSgov/IDES-Data-Preparation-OpenSSL">IDES Data Preparation - OpenSSL</a> is maintained by <a href="https://github.com/IRSgov">IRSgov</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-    
+    </section>
 
+  
   </body>
 </html>
+
