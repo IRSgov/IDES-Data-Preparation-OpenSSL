@@ -110,9 +110,24 @@ Figure 3</p>
 <img src="http://irsgov.github.io/IDES-Data-Preparation-OpenSSL/images/image3.png" alt="Image 4">
 Figure 4</p>
 
-<p>The hex content that is needed from the file is highlighted below. The rest of the information needs to be removed. 
-0000 - e0 a8 fc 55 88 72 3d 5f-24 0f e4 7f 39 42 df a9   ...U.r=_$...9B..
-0010 - c4 34 ab 26 bb b2 dc 20-65 59 d7 14 cd b0 15 47   .4.&amp;... eY.....G</p>
+<p>The hex content that is needed from the file is bolded below. The rest of the information needs to be removed. 
+0000 - <strong>e0 a8 fc 55 88 72 3d 5f-24 0f e4 7f 39 42 df a9</strong>   ...U.r=_$...9B..</p>
+
+<p>0010 - <strong>c4 34 ab 26 bb b2 dc 20-65 59 d7 14 cd b0 15 47</strong>   .4.&amp;... eY.....G</p>
+
+<ol>
+<li> With the beginning and ending information stripped out.</li>
+</ol>
+
+<p><strong>e0 a8 fc 55 88 72 3d 5f-24 0f e4 7f 39 42 df a9</strong></p>
+
+<p><strong>c4 34 ab 26 bb b2 dc 20-65 59 d7 14 cd b0 15 47</strong></p>
+
+<ol>
+<li> With the spaces and dashes removed and leftover characters together, the end result is a 64 character string. The string must be exactly 64 characters in length:
+<strong>e0a8fc5588723d5f240fe47f3942dfa9c434ab26bbb2dc206559d714cdb01547</strong>
+</li>
+</ol>
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
