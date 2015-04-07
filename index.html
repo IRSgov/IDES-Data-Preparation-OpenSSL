@@ -1,25 +1,37 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>IDES Data Preparation - OpenSSL by IRSgov</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">IDES Data Preparation - OpenSSL</h1>
-      <h2 class="project-tagline">Decrypting notifications received from IDES with OpenSSL</h2>
-      <a href="https://github.com/IRSgov/IDES-Data-Preparation-OpenSSL" class="btn">View on GitHub</a>
-      <a href="https://github.com/IRSgov/IDES-Data-Preparation-OpenSSL/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/IRSgov/IDES-Data-Preparation-OpenSSL/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+<html>
 
-    <section class="main-content">
-      <h2>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="IDES Data Preparation - OpenSSL : Decrypting notifications received from IDES with OpenSSL">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>IDES Data Preparation - OpenSSL</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/IRSgov/IDES-Data-Preparation-OpenSSL">View on GitHub</a>
+
+          <h1 id="project_title">IDES Data Preparation - OpenSSL</h1>
+          <h2 id="project_tagline">Decrypting notifications received from IDES with OpenSSL</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/IRSgov/IDES-Data-Preparation-OpenSSL/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/IRSgov/IDES-Data-Preparation-OpenSSL/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
 <a id="ides-data-preparation" class="anchor" href="#ides-data-preparation" aria-hidden="true"><span class="octicon octicon-link"></span></a>IDES Data Preparation</h2>
 
 <p>The International Data Exchange Service (IDES) is a secure managed file transfer service that allows financial institutions and tax authorities to securely send information on financial accounts held by U.S. taxpayers in accordance with the Foreign Account Tax Compliance Act (FATCA). Files transmitted via IDES must be encrypted and packaged in accordance with published data preparation instructions. The data preparation process is an important step to ensure that information transmitted via IDES conforms to U.S security standards to safeguard sensitive information.</p>
@@ -118,20 +130,37 @@ Figure 4</p>
 
 <p><strong>e0a8fc5588723d5f240fe47f3942dfa9c434ab26bbb2dc206559d714cdb01547</strong></p>
 
+<p>The second command to decrypt the Payload file can then be executed using the 64 character hex key string. The Payload file from the downloaded notification zip file is needed as well as the 64 character hex key string.</p>
+
+<pre><code>openssl aes-256-ecb -d -in 000000.00000.TA.840_Payload -out 000000.00000.TA.840_Payload.zip -K e0a8fc5588723d5f240fe47f3942dfa9c434ab26bbb2dc206559d714cdb01547
+</code></pre>
+
+<p>Decrypting the Payload file:
+<img src="http://irsgov.github.io/IDES-Data-Preparation-OpenSSL/images/image4.png" alt="Image 5">
+Figure 5</p>
+
+<p>This will decrypt the encrypted Payload file giving you the zip file which contains the XML Payload file.</p>
+
+<p>Folder Contents with the Payload .zip file:
+<img src="http://irsgov.github.io/IDES-Data-Preparation-OpenSSL/images/image5.png" alt="Image 6">
+Figure 6</p>
+
 <h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<a id="disclaimer" class="anchor" href="#disclaimer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Disclaimer:</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>We waive copyright and related rights in the work worldwide through the CC0 1.0 Universal public domain dedication. Unless expressly stated otherwise, the person who associated a work with this deed makes no warranties about the work, and disclaims liability for all uses of the work, to the fullest extent permitted by applicable law. When using or citing the work, you should not imply endorsement by the author or the affirmer.</p>
+      </section>
+    </div>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/IRSgov/IDES-Data-Preparation-OpenSSL">IDES Data Preparation - OpenSSL</a> is maintained by <a href="https://github.com/IRSgov">IRSgov</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">IDES Data Preparation - OpenSSL maintained by <a href="https://github.com/IRSgov">IRSgov</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
+    </div>
 
-    </section>
+    
 
-  
   </body>
 </html>
-
