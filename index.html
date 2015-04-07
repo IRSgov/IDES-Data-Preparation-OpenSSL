@@ -81,8 +81,38 @@ openssl aes-256-ecb -d -in PAYLOAD -out PAYLOAD.zip -K %combined%
 </code></pre>
 
 <p>Running the batch file:
-<img src="http://irsgov.github.io/IDES-Data-Preparation-OpenSSL/images/image11.png" alt="Image 5">
+<img src="http://irsgov.github.io/IDES-Data-Preparation-OpenSSL/images/image11.png" alt="Image 1">
 Figure 1</p>
+
+<h3>
+<a id="manual-openssl-commands" class="anchor" href="#manual-openssl-commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Manual OpenSSL Commands</h3>
+
+<p>If you are having trouble with an automated method above, there are additional steps you can take to decrypt the AES key, manually get the required hex key data, and use it to decrypt the Payload file. </p>
+
+<p>The process is similar to the automated method above. The following files are required and the filename in the batch script will need to be replaced with your filename for each:
+KEYFILE - this is the Key file that will be in the downloaded notification .zip file
+PRIVATEKEY - this will be your private key that corresponds to the certificate that was uploaded into IDES
+PAYLOAD - this is the Payload file that will be in the downloaded notification .zip file</p>
+
+<p>The following code should be run in the same folder as the openssl executable and necessary files.</p>
+
+<p>Decrypting the AES key:
+<img src="http://irsgov.github.io/IDES-Data-Preparation-OpenSSL/images/image1.png" alt="Image 2">
+Figure 2</p>
+
+<p>The hexdump flag in the command above will output the key in hexadecimal format which is needed to decrypt the Payload file. However, there is extra information that is included that needs to be removed before it can be used in the next command. You can use a text editor to open the aeskey.txt file which is the output of the first command.</p>
+
+<p>Example Hex data in Notepad++:
+<img src="http://irsgov.github.io/IDES-Data-Preparation-OpenSSL/images/image2.png" alt="Image 3">
+Figure 3</p>
+
+<p>Example Hex data in Notepad:
+<img src="http://irsgov.github.io/IDES-Data-Preparation-OpenSSL/images/image3.png" alt="Image 4">
+Figure 4</p>
+
+<p>The hex content that is needed from the file is highlighted below. The rest of the information needs to be removed. 
+0000 - e0 a8 fc 55 88 72 3d 5f-24 0f e4 7f 39 42 df a9   ...U.r=_$...9B..
+0010 - c4 34 ab 26 bb b2 dc 20-65 59 d7 14 cd b0 15 47   .4.&amp;... eY.....G</p>
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
