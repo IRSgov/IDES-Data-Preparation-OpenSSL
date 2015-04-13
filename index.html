@@ -89,10 +89,10 @@ Figure 1</p>
 
 <p>Similar to the Windows method above, the following code should be placed into a shell script and run in the same folder as the openssl executable. </p>
 
-<p>The following files are required and the filename in the batch script will need to be replaced with your filename for each:
-KEYFILE - this is the Key file that will be in the downloaded notification .zip file
-PRIVATEKEY - this will be your private key that corresponds to the certificate that was uploaded into IDES
-PAYLOAD - this is the Payload file that will be in the downloaded notification .zip file</p>
+<p>The following files are required and the file names passed to the batch script will need to be replaced with your filename for each:
+private_key - this will be your private key that corresponds to the certificate that was uploaded into IDES
+key_file - this is the Key file that will be in the downloaded notification .zip file
+payload_file - this is the Payload file that will be in the downloaded notification .zip file</p>
 
 <pre><code>private_key=$1 #this will be your private key that corresponds to the certificate that was uploaded into IDES
 
@@ -100,11 +100,17 @@ key_file=$2 #this is the Key file that will be in the downloaded notification .z
 
 payload_file=$3 #this is the Payload file that will be in the downloaded notification .zip file
 
-output_file=$4 #this is the expected output filename
+output_file=$4 #this is the expected output filename, and will be in a .zip format
 
-hexvalue=`openssl rsautl -decrypt -hexdump -inkey $private_key_file -in $random_key_file|cut -c-55|cut -c7-55|tr -d "\n"|sed 's/[ -]//g'`;
+hexvalue='openssl rsautl -decrypt -hexdump -inkey $private_key_file -in $random_key_file|cut -c-55|cut -c7-55|tr -d "\n"|sed 's/[ -]//g' ';
 
 openssl enc -d -aes-256-ecb -in $payload_file -out $output_file -K $hexvalue
+</code></pre>
+
+<p>An example of running the script with the required parameters:</p>
+
+<pre><code>decrypt.sh privatekey.pem 000000.00000.TA.124_Key 000000.00000.TA.840_Payload 000000.00000.TA.840_Payload.zip
+
 </code></pre>
 
 <h3>
