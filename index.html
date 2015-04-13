@@ -49,9 +49,9 @@
 
 <p>The following files are required and the filename in the batch script will need to be replaced with your filename for each:</p>
 
-<p>KEYFILE - this is the Key file that will be in the downloaded notification .zip file|
-PRIVATEKEY - this will be your private key that corresponds to the certificate that was uploaded into IDES
-PAYLOAD - this is the Payload file that will be in the downloaded notification .zip file</p>
+<p>KEYFILE - this is the Key file that will be in the downloaded notification .zip file<br>
+PRIVATEKEY - this will be your private key that corresponds to the certificate that was uploaded into IDES<br>
+PAYLOAD - this is the Payload file that will be in the downloaded notification .zip file<br></p>
 
 <p>The first command will decrypt the AES key. The batch code will parse the hex values of the AES key and prepare it for the second command. The second command will use the AES key in hex format and decrypt the Payload file. The output will be the decrypted Payload .zip file.</p>
 
@@ -90,10 +90,11 @@ Figure 1</p>
 
 <p>Similar to the Windows method above, the following code should be placed into a shell script and run in the same folder as the openssl executable. However, this script will use the cut command to prepare the hex data.</p>
 
-<p>The following files are required and the file names passed to the batch script will need to be replaced with your filename for each:
-private_key - this will be your private key that corresponds to the certificate that was uploaded into IDES
-key_file - this is the Key file that will be in the downloaded notification .zip file
-payload_file - this is the Payload file that will be in the downloaded notification .zip file</p>
+<p>The following files are required and the file names passed to the batch script will need to be replaced with your filename for each:</p>
+
+<p>private_key - this will be your private key that corresponds to the certificate that was uploaded into IDES<br>
+key_file - this is the Key file that will be in the downloaded notification .zip file<br>
+payload_file - this is the Payload file that will be in the downloaded notification .zip file<br></p>
 
 <pre><code>private_key=$1 #this will be your private key that corresponds to the certificate that was uploaded into IDES
 
@@ -119,10 +120,11 @@ openssl enc -d -aes-256-ecb -in $payload_file -out $output_file -K $hexvalue
 
 <p>If you are having trouble with an automated method above, there are additional steps you can take to decrypt the AES key, manually get the required hex key data, and use it to decrypt the Payload file. </p>
 
-<p>The process is similar to the automated method above. The following files are required and the filename in the batch script will need to be replaced with your filename for each:
-KEYFILE - this is the Key file that will be in the downloaded notification .zip file
-PRIVATEKEY - this will be your private key that corresponds to the certificate that was uploaded into IDES
-PAYLOAD - this is the Payload file that will be in the downloaded notification .zip file</p>
+<p>The process is similar to the automated method above. The following files are required and the filename in the batch script will need to be replaced with your filename for each:</p>
+
+<p>KEYFILE - this is the Key file that will be in the downloaded notification .zip file<br>
+PRIVATEKEY - this will be your private key that corresponds to the certificate that was uploaded into IDES<br>
+PAYLOAD - this is the Payload file that will be in the downloaded notification .zip file<br></p>
 
 <p>The following code should be run in the same folder as the openssl executable and necessary files.</p>
 
