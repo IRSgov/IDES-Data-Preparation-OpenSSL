@@ -49,9 +49,9 @@
 
 <p>The following files are required and the filename in the batch script will need to be replaced with your filename for each:</p>
 
-<p>*KEYFILE - this is the Key file that will be in the downloaded notification .zip file
-*PRIVATEKEY - this will be your private key that corresponds to the certificate that was uploaded into IDES
-*PAYLOAD - this is the Payload file that will be in the downloaded notification .zip file</p>
+<p>KEYFILE - this is the Key file that will be in the downloaded notification .zip file|
+PRIVATEKEY - this will be your private key that corresponds to the certificate that was uploaded into IDES
+PAYLOAD - this is the Payload file that will be in the downloaded notification .zip file</p>
 
 <p>The first command will decrypt the AES key. The batch code will parse the hex values of the AES key and prepare it for the second command. The second command will use the AES key in hex format and decrypt the Payload file. The output will be the decrypted Payload .zip file.</p>
 
