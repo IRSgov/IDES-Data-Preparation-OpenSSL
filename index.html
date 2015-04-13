@@ -47,10 +47,13 @@
 
 <p>The following code should be placed into a batch file and run in the same folder as the openssl executable. </p>
 
-<p>The following files are required and the filename in the batch script will need to be replaced with your filename for each:
-KEYFILE - this is the Key file that will be in the downloaded notification .zip file
-PRIVATEKEY - this will be your private key that corresponds to the certificate that was uploaded into IDES
-PAYLOAD - this is the Payload file that will be in the downloaded notification .zip file</p>
+<p>The following files are required and the filename in the batch script will need to be replaced with your filename for each:</p>
+
+<p>KEYFILE - this is the Key file that will be in the downloaded notification .zip file</p>
+
+<p>PRIVATEKEY - this will be your private key that corresponds to the certificate that was uploaded into IDES</p>
+
+<p>PAYLOAD - this is the Payload file that will be in the downloaded notification .zip file</p>
 
 <p>The first command will decrypt the AES key. The batch code will parse the hex values of the AES key and prepare it for the second command. The second command will use the AES key in hex format and decrypt the Payload file. The output will be the decrypted Payload .zip file.</p>
 
@@ -87,7 +90,7 @@ Figure 1</p>
 <h3>
 <a id="linux-shell-scripting" class="anchor" href="#linux-shell-scripting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linux Shell Scripting</h3>
 
-<p>Similar to the Windows method above, the following code should be placed into a shell script and run in the same folder as the openssl executable. </p>
+<p>Similar to the Windows method above, the following code should be placed into a shell script and run in the same folder as the openssl executable. However, this script will use the cut command to prepare the hex data.</p>
 
 <p>The following files are required and the file names passed to the batch script will need to be replaced with your filename for each:
 private_key - this will be your private key that corresponds to the certificate that was uploaded into IDES
