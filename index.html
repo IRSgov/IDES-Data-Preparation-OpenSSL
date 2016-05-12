@@ -32,7 +32,7 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h2>
-<a id="ides-data-preparation" class="anchor" href="#ides-data-preparation" aria-hidden="true"><span class="octicon octicon-link"></span></a>IDES Data Preparation</h2>
+<a id="ides-data-preparation" class="anchor" href="#ides-data-preparation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IDES Data Preparation</h2>
 
 <p>The International Data Exchange Service (IDES) is a secure managed file transfer service that allows financial institutions and tax authorities to securely send information on financial accounts held by U.S. taxpayers in accordance with the Foreign Account Tax Compliance Act (FATCA). Files transmitted via IDES must be encrypted and packaged in accordance with published data preparation instructions. The data preparation process is an important step to ensure that information transmitted via IDES conforms to U.S security standards to safeguard sensitive information.</p>
 
@@ -43,7 +43,7 @@
 <p>Please note that there are many open market tools that produce the same results; however, the IRS does not endorse any commercial products, including the frameworks used in the example. </p>
 
 <h3>
-<a id="windows-batch-scripting" class="anchor" href="#windows-batch-scripting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Windows Batch Scripting</h3>
+<a id="windows-batch-scripting" class="anchor" href="#windows-batch-scripting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Windows Batch Scripting</h3>
 
 <p>The following code should be placed into a batch file and run in the same folder as the openssl executable. </p>
 
@@ -86,7 +86,7 @@ openssl aes-256-ecb -d -in PAYLOAD -out PAYLOAD.zip -K %combined%
 Figure 1</p>
 
 <h3>
-<a id="linux-shell-scripting" class="anchor" href="#linux-shell-scripting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linux Shell Scripting</h3>
+<a id="linux-shell-scripting" class="anchor" href="#linux-shell-scripting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Linux Shell Scripting</h3>
 
 <p>Similar to the Windows method above, the following code should be placed into a shell script and run in the same folder as the openssl executable. However, this script will use the cut command to prepare the hex data.</p>
 
@@ -116,7 +116,7 @@ openssl enc -d -aes-256-ecb -in $payload_file -out $output_file -K $hexvalue
 </code></pre>
 
 <h3>
-<a id="manual-openssl-commands" class="anchor" href="#manual-openssl-commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Manual OpenSSL Commands</h3>
+<a id="manual-openssl-commands" class="anchor" href="#manual-openssl-commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Manual OpenSSL Commands</h3>
 
 <p>If you are having trouble with an automated method above, there are additional steps you can take to decrypt the AES key, manually get the required hex key data, and use it to decrypt the Payload file. </p>
 
@@ -178,7 +178,7 @@ Figure 5</p>
 Figure 6</p>
 
 <h3>
-<a id="disclaimer" class="anchor" href="#disclaimer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Disclaimer:</h3>
+<a id="disclaimer" class="anchor" href="#disclaimer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Disclaimer:</h3>
 
 <p>We waive copyright and related rights in the work worldwide through the CC0 1.0 Universal public domain dedication. Unless expressly stated otherwise, the person who associated a work with this deed makes no warranties about the work, and disclaims liability for all uses of the work, to the fullest extent permitted by applicable law. When using or citing the work, you should not imply endorsement by the author or the affirmer.</p>
       </section>
@@ -192,7 +192,17 @@ Figure 6</p>
       </footer>
     </div>
 
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-8154638-3");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
 
   </body>
 </html>
